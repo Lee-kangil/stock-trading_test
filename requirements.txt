@@ -1,0 +1,12 @@
+# 1주차 ~ 백테스트까지 사용할 핵심 패키지
+# 설치: (가상환경 활성화 후) pip install -r requirements.txt
+
+finance-datareader   # 한국/미국 주가 데이터 수집 (가장 쉬움)
+pykrx                # KRX 공식 데이터 (거래대금, 시총, 펀더멘털 등)
+pandas               # 데이터 처리의 기본
+numpy                # 수치 계산
+matplotlib           # 차트 그리기
+mplfinance           # 캔들차트 (선택)
+backtesting          # 3주차부터 쓰는 백테스트 엔진
+requests             # 6주차 실거래 API 호출
+python-dotenv        # 6주차 API 키를 .env에서 안전하게 로드

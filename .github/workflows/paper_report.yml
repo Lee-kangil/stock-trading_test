@@ -1,0 +1,42 @@
+name: Paper + Report
+
+on:
+  schedule:
+    - cron: "5 7 * * 1-5"   # 평일 07:05 UTC = 16:05 KST (마감 후)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trading
+  cancel-in-progress: false
+
+jobs:
+  paper:
+    runs-on: ubuntu-latest
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run local 5-strategy paper
+        run: python -u src/multi_paper.py
+      - name: Build report
+        run: python -u src/report.py
+      - name: Publish report to GitHub Pages (docs/)
+        run: |
+          mkdir -p docs
+          cp data/report_latest.html docs/index.html || true
+          cp data/report_*.html docs/ 2>/dev/null || true
+      - name: Persist state + report
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git pull --rebase --autostash || true
+          git add -f data/multi_paper_state.json data/multi_paper_log.csv docs/ || true
+          git commit -m "paper+report $(date -u +%F)" || echo "no changes"
+          git push || true

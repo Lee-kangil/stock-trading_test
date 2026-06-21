@@ -1,0 +1,41 @@
+name: KIS Mock Trade
+
+on:
+  schedule:
+    - cron: "5 6 * * 1-5"   # 평일 06:05 UTC = 15:05 KST (장중)
+  workflow_dispatch:          # 수동 실행 버튼
+
+permissions:
+  contents: write
+
+concurrency:
+  group: trading
+  cancel-in-progress: false
+
+jobs:
+  trade:
+    runs-on: ubuntu-latest
+    env:
+      KIS_ENV: paper
+      KIS_APP_KEY: ${{ secrets.KIS_APP_KEY }}
+      KIS_APP_SECRET: ${{ secrets.KIS_APP_SECRET }}
+      KIS_ACCOUNT: ${{ secrets.KIS_ACCOUNT }}
+      KIS_PRODUCT: ${{ secrets.KIS_PRODUCT }}
+      KIS_LIVE: ${{ vars.KIS_LIVE }}     # 0=시뮬, 1=실제 모의주문 (저장소 Variables)
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt
+      - name: Run KIS strategy
+        run: python -u src/run_live.py
+      - name: Persist state
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git pull --rebase --autostash || true
+          git add -f data/live_state.json || true
+          git commit -m "kis run $(date -u +%F_%H%M)" || echo "no changes"
+          git push || true
