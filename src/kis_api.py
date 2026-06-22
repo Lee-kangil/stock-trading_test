@@ -147,3 +147,41 @@ def config_summary() -> str:
     masked = (APP_KEY[:4] + "***") if APP_KEY else "(없음)"
     return (f"ENV={ENV} | BASE={BASE}\n"
             f"APP_KEY={masked} | ACCOUNT={'설정됨' if ACCOUNT else '(없음)'}-{PRODUCT}")
+
+
+def get_balance_parsed() -> dict:
+    """잔고조회 응답을 {cash, total_eval, positions:[...]}로 파싱."""
+    raw = get_balance()
+    out1 = raw.get("output1", []) or []
+    out2 = raw.get("output2", []) or []
+
+    def _f(d, k):
+        try:
+            return float(d.get(k, "0") or 0)
+        except Exception:
+            return 0.0
+
+    positions = []
+    for h in out1:
+        try:
+            qty = int(float(h.get("hldg_qty", "0") or 0))
+        except Exception:
+            qty = 0
+        if qty <= 0:
+            continue
+        positions.append({
+            "code": h.get("pdno", ""),
+            "name": h.get("prdt_name", ""),
+            "qty": qty,
+            "avg_price": _f(h, "pchs_avg_pric"),
+            "cur_price": _f(h, "prpr"),
+            "eval_amt": _f(h, "evlu_amt"),
+            "pnl": _f(h, "evlu_pfls_amt"),
+            "ret_pct": _f(h, "evlu_pfls_rt"),
+        })
+    summary = out2[0] if out2 else {}
+    return {
+        "cash": _f(summary, "dnca_tot_amt"),        # 예수금총액
+        "total_eval": _f(summary, "tot_evlu_amt"),  # 총평가금액
+        "positions": positions,
+    }
