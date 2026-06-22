@@ -2,7 +2,11 @@ name: KIS Mock Trade
 
 on:
   schedule:
-    - cron: "5 6 * * 1-5"   # 평일 06:05 UTC = 15:05 KST (장중)
+    # 장중(09:00~15:30 KST) 여러 번 시도 — GitHub cron 누락 대비.
+    # 멱등성 가드(run_live.py)로 실제 주문은 그날 '한 번만' 일어남.
+    - cron: "30 5 * * 1-5"   # 14:30 KST
+    - cron: "55 5 * * 1-5"   # 14:55 KST
+    - cron: "15 6 * * 1-5"   # 15:15 KST
   workflow_dispatch:          # 수동 실행 버튼
 
 permissions:
@@ -29,8 +33,12 @@ jobs:
         with:
           python-version: "3.11"
       - run: pip install -r requirements.txt
-      - name: Run KIS strategy
-        run: python -u src/run_live.py
+      - name: Run KIS strategy (재시도 3회)
+        run: |
+          for i in 1 2 3; do
+            python -u src/run_live.py && break
+            echo "[재시도] $i회차 실패 — 30초 후 다시 시도"; sleep 30
+          done
       - name: Persist state
         run: |
           git config user.name "github-actions"

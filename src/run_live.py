@@ -92,6 +92,13 @@ def main():
 
     # 킬스위치: 현재 평가자산 기준 누적손익
     state = load_state(LIVE_STATE, CAPITAL)
+
+    # 중복 실행 방지(멱등성): 같은 거래일을 이미 처리했으면 주문하지 않고 종료.
+    # → 안정성을 위해 하루에 cron을 여러 번 잡아도 실제 주문은 한 번만 일어난다.
+    if state.get("last_date") == str(latest.date()):
+        print(f"[i] 기준일 {latest.date()}는 이미 처리됨 — 중복 주문 방지로 종료.")
+        return
+
     holdings = sum(pos["shares"] * float(data[t].loc[latest, "Close"])
                    for t, pos in state["positions"].items() if latest in data[t].index)
     equity = state["cash"] + holdings
