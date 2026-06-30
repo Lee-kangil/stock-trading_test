@@ -1,8 +1,15 @@
 {
   "골든크로스": {
-    "cash": 20000000,
-    "positions": {},
-    "last_date": "2026-06-26",
+    "cash": 18145869.9222,
+    "positions": {
+      "483650": {
+        "shares": 8,
+        "entry_price": 231500.0,
+        "entry_date": "2026-06-30",
+        "days_held": 0
+      }
+    },
+    "last_date": "2026-06-30",
     "equity_history": [
       [
         "2026-06-22",
@@ -23,74 +30,78 @@
       [
         "2026-06-26",
         20000000.0
+      ],
+      [
+        "2026-06-30",
+        19997870.0
       ]
     ]
   },
   "ADX추세": {
-    "cash": 1167683.126665004,
+    "cash": 696986.8912500041,
     "positions": {
-      "032830": {
-        "shares": 4,
-        "entry_price": 450500.0,
-        "entry_date": "2026-06-22",
-        "days_held": 4
-      },
       "034730": {
         "shares": 2,
         "entry_price": 730000.0,
         "entry_date": "2026-06-22",
-        "days_held": 4
+        "days_held": 5
       },
       "004170": {
         "shares": 2,
         "entry_price": 720000.0,
         "entry_date": "2026-06-22",
-        "days_held": 4
+        "days_held": 5
       },
       "240810": {
         "shares": 12,
         "entry_price": 150100.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "319660": {
         "shares": 11,
         "entry_price": 159700.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "069960": {
         "shares": 9,
         "entry_price": 191600.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "012510": {
         "shares": 15,
         "entry_price": 120000.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "067310": {
         "shares": 36,
         "entry_price": 49650.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
-      },
-      "005930": {
-        "shares": 5,
-        "entry_price": 340500.0,
-        "entry_date": "2026-06-24",
-        "days_held": 2
+        "days_held": 4
       },
       "402340": {
         "shares": 1,
         "entry_price": 1720000.0,
         "entry_date": "2026-06-26",
+        "days_held": 1
+      },
+      "095610": {
+        "shares": 9,
+        "entry_price": 208000.0,
+        "entry_date": "2026-06-30",
+        "days_held": 0
+      },
+      "089970": {
+        "shares": 17,
+        "entry_price": 109300.0,
+        "entry_date": "2026-06-30",
         "days_held": 0
       }
     },
-    "last_date": "2026-06-26",
+    "last_date": "2026-06-30",
     "equity_history": [
       [
         "2026-06-22",
@@ -111,6 +122,10 @@
       [
         "2026-06-26",
         18815083.0
+      ],
+      [
+        "2026-06-30",
+        18814287.0
       ]
     ]
   },
@@ -121,64 +136,64 @@
         "shares": 8,
         "entry_price": 224000.0,
         "entry_date": "2026-06-22",
-        "days_held": 4
+        "days_held": 5
       },
       "032830": {
         "shares": 4,
         "entry_price": 450500.0,
         "entry_date": "2026-06-22",
-        "days_held": 4
+        "days_held": 5
       },
       "105560": {
         "shares": 12,
         "entry_price": 157000.0,
         "entry_date": "2026-06-22",
-        "days_held": 4
+        "days_held": 5
       },
       "005930": {
         "shares": 5,
         "entry_price": 310000.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "005380": {
         "shares": 3,
         "entry_price": 511000.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "028260": {
         "shares": 4,
         "entry_price": 455000.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "034730": {
         "shares": 2,
         "entry_price": 705000.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "055550": {
         "shares": 18,
         "entry_price": 97700.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "402340": {
         "shares": 1,
         "entry_price": 1720000.0,
         "entry_date": "2026-06-26",
-        "days_held": 0
+        "days_held": 1
       },
       "012330": {
         "shares": 3,
         "entry_price": 486500.0,
         "entry_date": "2026-06-26",
-        "days_held": 0
+        "days_held": 1
       }
     },
-    "last_date": "2026-06-26",
+    "last_date": "2026-06-30",
     "equity_history": [
       [
         "2026-06-22",
@@ -199,74 +214,78 @@
       [
         "2026-06-26",
         18685967.0
+      ],
+      [
+        "2026-06-30",
+        18651467.0
       ]
     ]
   },
   "하이킨아시": {
-    "cash": 692472.9693900037,
+    "cash": 853490.8456400037,
     "positions": {
-      "032830": {
-        "shares": 4,
-        "entry_price": 450500.0,
-        "entry_date": "2026-06-22",
-        "days_held": 4
-      },
       "034730": {
         "shares": 2,
         "entry_price": 730000.0,
         "entry_date": "2026-06-22",
-        "days_held": 4
+        "days_held": 5
       },
       "067310": {
         "shares": 35,
         "entry_price": 49650.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "483650": {
         "shares": 8,
         "entry_price": 207500.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "009155": {
         "shares": 2,
         "entry_price": 817000.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "290650": {
         "shares": 20,
         "entry_price": 87900.0,
         "entry_date": "2026-06-23",
-        "days_held": 3
+        "days_held": 4
       },
       "012510": {
         "shares": 15,
         "entry_price": 120000.0,
         "entry_date": "2026-06-24",
-        "days_held": 2
+        "days_held": 3
       },
       "145020": {
         "shares": 6,
         "entry_price": 259500.0,
         "entry_date": "2026-06-24",
-        "days_held": 2
-      },
-      "005935": {
-        "shares": 8,
-        "entry_price": 220500.0,
-        "entry_date": "2026-06-26",
-        "days_held": 0
+        "days_held": 3
       },
       "003490": {
         "shares": 63,
         "entry_price": 28050.0,
         "entry_date": "2026-06-26",
+        "days_held": 1
+      },
+      "196170": {
+        "shares": 4,
+        "entry_price": 361000.0,
+        "entry_date": "2026-06-30",
+        "days_held": 0
+      },
+      "240810": {
+        "shares": 10,
+        "entry_price": 168100.0,
+        "entry_date": "2026-06-30",
         "days_held": 0
       }
     },
-    "last_date": "2026-06-26",
+    "last_date": "2026-06-30",
     "equity_history": [
       [
         "2026-06-22",
@@ -287,20 +306,36 @@
       [
         "2026-06-26",
         17819623.0
+      ],
+      [
+        "2026-06-30",
+        17760891.0
       ]
     ]
   },
   "Minervini": {
-    "cash": 17692179.0417425,
+    "cash": 13942831.6839865,
     "positions": {
       "034730": {
         "shares": 2,
         "entry_price": 858000.0,
         "entry_date": "2026-06-25",
-        "days_held": 1
+        "days_held": 2
+      },
+      "214450": {
+        "shares": 5,
+        "entry_price": 363000.0,
+        "entry_date": "2026-06-30",
+        "days_held": 0
+      },
+      "005440": {
+        "shares": 122,
+        "entry_price": 15820.0,
+        "entry_date": "2026-06-30",
+        "days_held": 0
       }
     },
-    "last_date": "2026-06-26",
+    "last_date": "2026-06-30",
     "equity_history": [
       [
         "2026-06-22",
@@ -321,6 +356,10 @@
       [
         "2026-06-26",
         19322179.0
+      ],
+      [
+        "2026-06-30",
+        19355872.0
       ]
     ]
   }
